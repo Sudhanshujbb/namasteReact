@@ -21,9 +21,9 @@ const RestaurantMenu = ()=>{
     }
 
   
-    const {name, costForTwoMessage, restaurantId, cuisines, price, defaultPrice }  = restaurantList?.data?.cards[0]?.card?.card?.info;
+    const {name, costForTwoMessage, restaurantId, cuisines, price, defaultPrice }  = restaurantList?.data?.cards[2]?.card?.card?.info;
     // console.log(name);
-    const {itemCards }= restaurantList?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card; 
+    const {itemCards }= restaurantList?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card; 
     // console.log(itemCards[0]);
     return(
         <div>
