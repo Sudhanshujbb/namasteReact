@@ -3,6 +3,7 @@ import resList from "../Utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import {Link} from 'react-router-dom';
+import useOnlineStatus from "../Utils/useOnlineStatus";
 const Body = ()=>{
     const [listOfRestaraunts, setListOfRestaraunts] = useState([]);
     const [filteredRestraunts, setFilteredRestraunts] = useState([]);
@@ -17,13 +18,18 @@ const Body = ()=>{
       const json = await data.json();
       console.log(json);
 
-      setListOfRestaraunts(json.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-      setFilteredRestraunts(json.data?.cards[3]?.card.card?.gridElements?.infoWithStyle?.restaurants);
+      setListOfRestaraunts(json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setFilteredRestraunts(json.data?.cards[1]?.card.card?.gridElements?.infoWithStyle?.restaurants);
 
     }
 
     const [searchText, setSearchText] = useState("");
     //conditional rendering 
+    if(useOnlineStatus() == false){
+      return <div>
+        <h1>oops check YOur Connections. !!!</h1>
+      </div>
+    }
     if(listOfRestaraunts.length==0){
       return <Shimmer/>;
     }
