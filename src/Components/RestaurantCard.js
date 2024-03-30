@@ -4,9 +4,9 @@ const RestarauntCard = (props) =>{
     const {name, cloudinaryImageId, costForTwo, cuisines, avgRating, slaString} = resData?.info;
     console.log(resData.info);
     return(
-       <div className="res-card">
+       <div className="m-4 p-4 w-[250px] bg-gray-100 hover:bg-gray-300">
           <img  className="res-logo" src={mediaUrl+cloudinaryImageId}/>
-          <h2>{name}</h2>
+          <h2 className="font-bold text-lg">{name}</h2>
           <h4>{cuisines.join(", ")}</h4>
           <h4>{avgRating} Stars</h4>
           <h4>{slaString}</h4>

@@ -4,18 +4,18 @@ import { Link } from "react-router-dom";
 export const Header = ()=>{
    const [btnName, setBtnName] = useState("Login");
     return(
-       <div className="header">
+       <div className="flex justify-between items-center m-1 bg-pink-100">
           <div className="logo-container">
-             <img className="logo" src={logoUrl}/>
+             <img className="w-32" src={logoUrl}/>
           </div>
           <div className="nav-items">
-                <ul>
-                   <li><Link to="/">Home</Link></li>
-                   <li><Link to="/about">About</Link></li>
-                   <li><Link to="/contact">Contact</Link></li>
-                   <li><Link to="/grocery">Grocery</Link></li>
-                   <li>Cart</li>
-                   <button className="login-btn" onClick={()=>{
+                <ul className="flex ">
+                   <li className="p-4 m-4 font-bold"><Link to="/">Home</Link></li>
+                   <li className="p-4 m-4 font-bold"><Link to="/about">About</Link></li>
+                   <li className="p-4 m-4 font-bold"><Link to="/contact">Contact</Link></li>
+                   <li className="p-4 m-4 font-bold"><Link to="/grocery">Grocery</Link></li>
+                   <li className="p-4 m-4 font-bold">Cart</li>
+                   <button className="login-btn p-4 m-4 font-bold" onClick={()=>{
                      btnName=="Login"?setBtnName("Logout"):setBtnName("Login");
                    }}>{btnName}</button>
                 </ul>
