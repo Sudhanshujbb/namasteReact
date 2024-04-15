@@ -15,4 +15,13 @@ const RestarauntCard = (props) =>{
     );
  }
 
+ export const promotedRestaurantCard = (RestaurantCard)=>{
+   return (props)=>{
+      return (<div>
+         <label className="absolute bg-green-500 text-white">Open</label>
+         <RestarauntCard {...props}/>
+      </div>);
+   }
+ }
+
  export default RestarauntCard;

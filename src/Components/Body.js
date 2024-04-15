@@ -1,4 +1,4 @@
-import RestarauntCard from "./RestaurantCard";
+import RestarauntCard, { promotedRestaurantCard } from "./RestaurantCard";
 import resList from "../Utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
@@ -22,7 +22,8 @@ const Body = ()=>{
       setFilteredRestraunts(json.data?.cards[1]?.card.card?.gridElements?.infoWithStyle?.restaurants);
 
     }
-
+    const RestaurantCardPromoted = promotedRestaurantCard(RestarauntCard);
+    console.log(filteredRestraunts);
     const [searchText, setSearchText] = useState("");
     //conditional rendering 
     if(useOnlineStatus() == false){
@@ -53,7 +54,8 @@ const Body = ()=>{
           </div>
           <div className="flex flex-wrap">
             {filteredRestraunts.map((restaurants)=>(
-               <Link to={"/restaurant/"+restaurants.info.id} key={restaurants.info.key}> <RestarauntCard resData ={restaurants}/></Link>
+             
+               <Link to={"/restaurant/"+restaurants.info.id} key={console.log(restaurants.info.isOpen)}>{restaurants.info.isOpen? (<RestaurantCardPromoted resData ={restaurants}/>):(<RestarauntCard resData ={restaurants} />)}</Link>
             ))}
              
           </div>
