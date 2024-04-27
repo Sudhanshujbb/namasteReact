@@ -1,7 +1,7 @@
 import { mediaUrl } from "../Utils/constant";
 
 const ItemList = (itemCards)=>{
-    console.log(itemCards.items);
+    
     return (
         <div>
         {itemCards.items.map((res)=>(

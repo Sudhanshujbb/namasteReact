@@ -18,8 +18,8 @@ const Body = ()=>{
       const json = await data.json();
       console.log(json);
 
-      setListOfRestaraunts(json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-      setFilteredRestraunts(json.data?.cards[1]?.card.card?.gridElements?.infoWithStyle?.restaurants);
+      setListOfRestaraunts(json.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setFilteredRestraunts(json.data?.cards[2]?.card.card?.gridElements?.infoWithStyle?.restaurants);
 
     }
     const RestaurantCardPromoted = promotedRestaurantCard(RestarauntCard);

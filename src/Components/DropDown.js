@@ -1,12 +1,13 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
 
-const DropDown = (info)=>{
-    const {title, itemCards} = info.info;
-    // console.log(info )
-    const [showItem, setShowItem] = useState(false);
+const DropDown = ({info, showItem, setShowIndex})=>{
+    const {title, itemCards} = info;
+    
+   const [toggle, setToggle] = useState(false);
     const dropDown = ()=>{
-        setShowItem(!showItem);
+        setShowIndex();
+        setToggle(!toggle)
     }
     return(
         <div>
@@ -15,7 +16,7 @@ const DropDown = (info)=>{
                     <h1 className="font-bold text-lg">{title} ({itemCards.length})</h1>
                     <p>🔽</p>
                 </div>
-                {showItem && <ItemList items={itemCards}/>}
+                 { toggle && showItem && <ItemList items={itemCards}/>}
 
             </div>
         </div>
